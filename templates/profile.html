@@ -1,0 +1,39 @@
+{% extends "show.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block header %}Your Profile{% endblock %}
+
+{% block table %}
+    <div class="container mt-4">
+        <h3>User Info</h3>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Role:</strong> {{ user.role }}</p>
+        <a href="{% url 'profile_edit' %}" class="btn btn-primary mb-3">Edit Profile</a>
+
+        <h3>Your Bookings</h3>
+        {% if tickets %}
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Flight</th>
+                    <th>Seat Number</th>
+                    <th>Issued Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for ticket in tickets %}
+                    <tr>
+                        <td>{{ ticket.flight }}</td>
+                        <td>{{ ticket.seat_number }}</td>
+                        <td>{{ ticket.issued_date }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>You have no bookings yet.</p>
+        {% endif %}
+    </div>
+{% endblock %}

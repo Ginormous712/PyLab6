@@ -1,0 +1,21 @@
+{% extends 'create.html' %}
+{% block title %}Updating Airport{% endblock title %}
+{% block header %}Updating Airport{% endblock header %}
+{% block form %}
+    <div class="form-group">
+        <label for="inputName">Name</label>
+        <input id="inputName" type="text" class="form-control" name="name" value="{{ airport.name }}" required>
+    </div>
+    <div class="form-group">
+        <label for="inputCode">Code (IATA/ICAO)</label>
+        <input id="inputCode" type="text" class="form-control" name="code" value="{{ airport.code }}" required>
+    </div>
+    <div class="form-group">
+        <label for="inputLocation">Location</label>
+        <input id="inputLocation" type="text" class="form-control" name="location" value="{{ airport.location }}" required>
+    </div>
+    <div class="form-group">
+        <label for="inputContact">Contact Info</label>
+        <textarea id="inputContact" class="form-control" name="contact_info" rows="3" required>{{ airport.contact_info }}</textarea>
+    </div>
+{% endblock form %}

@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "show.html" %}
+{% block title %}Flights{% endblock title %}
+{% block header %}Table Flights{% endblock header %}
+{% block table %}
+    <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Flight #</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Status</th>
+            <th>Airline</th>
+            <th>From</th>
+            <th>To</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for flight in flights %}
+            <tr>
+                <td>{{ flight.id }}</td>
+                <td>{{ flight.flight_number }}</td>
+                <td>{{ flight.departure_time }}</td>
+                <td>{{ flight.arrival_time }}</td>
+                <td>{{ flight.status }}</td>
+                <td>{{ flight.airline.name }}</td>
+                <td>{{ flight.departure_airport.name }}</td>
+                <td>{{ flight.arrival_airport.name }}</td>
+                <td><a href="update_flight/{{ flight.id }}" class="btn btn-warning btn-block">Update</a></td>
+                <td><a href="delete_flight/{{ flight.id }}" class="btn btn-danger btn-block">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="create_flight/" class="btn btn-success btn-block">Create new</a>
+{% endblock table %}

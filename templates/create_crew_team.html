@@ -1,0 +1,22 @@
+{% extends 'create.html' %}
+{% block title %}Create Crew Team{% endblock title %}
+{% block header %}Create Crew Team{% endblock header %}
+{% block form %}
+    <div class="form-group">
+        <label for="selectFlight">Flight</label>
+        <select id="selectFlight" name="flight" class="form-control" required>
+            {% for flight in flights %}
+                <option value="{{ flight.id }}">{{ flight.flight_number }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="selectMembers">Crew Members</label>
+        <select id="selectMembers" name="members" class="form-control" multiple size="6" required>
+            {% for member in crew_members %}
+                <option value="{{ member.id }}">{{ member.first_name }} {{ member.last_name }} ({{ member.position }})</option>
+            {% endfor %}
+        </select>
+        <small class="form-text text-muted">Use Ctrl/Cmd to select multiple members</small>
+    </div>
+{% endblock form %}

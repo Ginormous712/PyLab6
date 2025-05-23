@@ -1,0 +1,15 @@
+{% extends "show.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block header %}Register{% endblock %}
+
+{% block table %}
+    <div class="container mt-4">
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Register</button>
+        </form>
+    </div>
+{% endblock %}

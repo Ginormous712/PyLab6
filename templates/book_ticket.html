@@ -1,0 +1,14 @@
+{% extends 'create.html' %}
+
+{% block title %}Book Ticket{% endblock title %}
+{% block header %}Book a Ticket{% endblock header %}
+{% block form %}
+    {{ form.as_p }}
+    {% if messages %}
+        <ul class="mt-3">
+            {% for message in messages %}
+                <li class="alert alert-{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock form %}

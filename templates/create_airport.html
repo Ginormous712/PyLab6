@@ -1,0 +1,21 @@
+{% extends 'create.html' %}
+{% block title %}Creating Airport{% endblock title %}
+{% block header %}Creating Airport{% endblock header %}
+{% block form %}
+    <div class="form-group">
+        <label for="inputName">Name</label>
+        <input id="inputName" type="text" class="form-control" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="inputCode">Code (IATA/ICAO)</label>
+        <input id="inputCode" type="text" class="form-control" name="code" required>
+    </div>
+    <div class="form-group">
+        <label for="inputLocation">Location</label>
+        <input id="inputLocation" type="text" class="form-control" name="location" required>
+    </div>
+    <div class="form-group">
+        <label for="inputContact">Contact Info</label>
+        <textarea id="inputContact" class="form-control" name="contact_info" rows="3" required></textarea>
+    </div>
+{% endblock form %}

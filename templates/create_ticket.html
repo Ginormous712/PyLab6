@@ -1,0 +1,25 @@
+{% extends 'create.html' %}
+{% block title %}Creating Ticket{% endblock title %}
+{% block header %}Creating Ticket{% endblock header %}
+{% block form %}
+    <div class="form-group">
+        <label for="user">Select User</label>
+        <select name="user" id="user" class="form-control">
+            {% for user in users %}
+                <option value="{{ user.id }}">{{ user.username }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="flight">Select Flight</label>
+        <select name="flight" id="flight" class="form-control">
+            {% for flight in flights %}
+                <option value="{{ flight.id }}">{{ flight.flight_number }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="seat_number">Enter Seat Number</label>
+        <input type="text" class="form-control" name="seat_number" id="seat_number">
+    </div>
+{% endblock form %}

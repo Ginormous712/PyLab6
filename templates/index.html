@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
     <title>Homepage</title>
 </head>
-<body>
-    <h1>This is a home page</h1>
-    <a href=""
+<body class="container mt-4">
+    <h1 class="mb-4">Welcome to the Airline Management System</h1>
+
+    <div class="btn-group-vertical">
+        <a href="/show_airlines" class="btn btn-info mb-2">Show Airlines</a>
+        <a href="/show_flights" class="btn btn-info mb-2">Show Flights</a>
+        <a href="/show_airports" class="btn btn-info mb-2">Show Airports</a>
+        <a href="/show_tickets" class="btn btn-info mb-2">Show Tickets</a>
+        <a href="/show_users" class="btn btn-info mb-2">Show Users</a>
+        <a href="/show_crew_members" class="btn btn-info mb-2">Show Crew Members</a>
+        <a href="/show_crew_teams/" class="btn btn-info mb-2">Show Crew Teams</a>
+        <a href="{% url 'public_flights' %}" class="btn btn-primary">View Available Flights</a>
+    </div>
 </body>
 </html>

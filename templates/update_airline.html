@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'create.html' %}
+{% block title %}Updating Airline{% endblock title %}
+{% block header %}Updating Airline{% endblock header %}
+{% block form %}
+    <div class="form-group">
+        <label for="inputName">Enter Name of Airline</label>
+        <input id="inputName" type="text" class="form-control" name="name" value="{{ airline.name }}">
+    </div>
+    <div class="form-group">
+        <label for="inputCountry">Enter Country</label>
+        <input id="inputCountry" type="text" class="form-control" name="country" value="{{ airline.country }}">
+    </div>
+    <div class="form-group">
+        <label for="inputContact">Contact Information</label>
+        <textarea id="inputContact" class="form-control" name="contact_info">{{ airline.contact_info }}</textarea>
+    </div>
+{% endblock form %}

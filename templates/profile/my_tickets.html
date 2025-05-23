@@ -1,0 +1,19 @@
+{% extends 'show.html' %}
+
+{% block title %}My Tickets{% endblock %}
+{% block header %}My Booked Tickets{% endblock %}
+{% block table %}
+    <div class="container mt-4">
+        {% if tickets %}
+            <ul class="list-group">
+                {% for ticket in tickets %}
+                    <li class="list-group-item">
+                        Flight: {{ ticket.flight }}, Seat: {{ ticket.seat_number }}, Issued: {{ ticket.issued_date }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No tickets booked yet.</p>
+        {% endif %}
+    </div>
+{% endblock %}
